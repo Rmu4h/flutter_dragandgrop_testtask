@@ -72,7 +72,8 @@ class Start extends StatelessWidget {
               //make color or elevated button transparent
             ),
             onPressed: () {
-              Navigator.popAndPushNamed(context, '/main');
+              Navigator.of(context).pushNamed('/main');
+              // Navigator.popAndPushNamed(context, '/main');
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
