@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_draganddrop_testtask/start/start.dart';
 
-import 'game/game.dart';
+import 'level_one/level_one.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,23 +10,14 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'Quicksand'
-      ),
+      theme: ThemeData(fontFamily: 'Quicksand'),
       initialRoute: '/',
       routes: {
-        // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => const Start(), //SearchWidget MainPage
-
-        // '/main': (context) => WillPopScope(
-        //     onWillPop: () => Future.value(false),
-        //     child: const MapPage()),
-
-        '/main': (context) => const Game(),
+        '/': (context) => const Start(),
+        '/main': (context) => const LevelOne(),
       },
     );
   }

@@ -14,10 +14,8 @@ class EggItem extends StatefulWidget {
 class _EggItemState extends State<EggItem> {
   @override
   Widget build(BuildContext context) {
-    print('${widget.dragElement.isDropped} -- is dropped in Egg');
     return Draggable(
       data: widget.dragElement.titleNum,
-      //Dragging. переношу
       feedback: SizedBox(
         height: 140.0,
         width: 140.0,

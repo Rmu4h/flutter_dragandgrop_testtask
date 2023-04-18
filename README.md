@@ -1,16 +1,12 @@
-# flutter_draganddrop_testtask
+# Mobile game "Egger" for android and ios
 
-A new Flutter project.
+What was implemented:
+1. Initial page with Start button. It is placed in a separate folder because it is possible to add buttons here: Settings, Game for two, and other functionality in the future.
+2. The next page contains a game where you have to drag the egg into the correct basket. If successful, you will see a welcome window
 
-## Getting Started
+Technology stack:
 
-This project is a starting point for a Flutter application.
+1. DART
+2. FLUTTER
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

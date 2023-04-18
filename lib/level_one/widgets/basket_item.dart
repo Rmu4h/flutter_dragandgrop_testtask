@@ -19,7 +19,6 @@ class BasketItem extends StatefulWidget {
 }
 
 class _BasketItemState extends State<BasketItem> {
-
   void showSnackBarGlobal(BuildContext context, String message) {
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -30,7 +29,6 @@ class _BasketItemState extends State<BasketItem> {
         )));
   }
 
-
   @override
   Widget build(BuildContext context) {
     return DragTarget(
@@ -39,7 +37,7 @@ class _BasketItemState extends State<BasketItem> {
         List<dynamic> accepted,
         List<dynamic> rejected,
       ) {
-        return Container(
+        return SizedBox(
           height: 150,
           width: 150,
           child: Center(
@@ -70,10 +68,7 @@ class _BasketItemState extends State<BasketItem> {
       onAccept: (data) {
         setState(() {
           showSnackBarGlobal(context, 'Dropped successfully!');
-          // widget.dragElement.isDropped = true;
           widget.updateProgress();
-          // widget.showDialogWindow();
-          print('${widget.dragElement.isDropped} -- isDropped in basketItem');
         });
       },
       onLeave: (data) {

@@ -3,9 +3,8 @@ class DragElement {
   final String description;
   bool isDropped;
 
-  DragElement({
-    required this.titleNum,
-    required this.description,
-    required this.isDropped
-  });
+  DragElement(
+      {required this.titleNum,
+      required this.description,
+      required this.isDropped});
 }
