@@ -1,9 +1,11 @@
 class DragElement {
   final int titleNum;
   final String description;
+  bool isDropped;
 
-  const DragElement({
+  DragElement({
     required this.titleNum,
     required this.description,
+    required this.isDropped
   });
 }
