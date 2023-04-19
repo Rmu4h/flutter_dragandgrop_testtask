@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_draganddrop_testtask/level_one/widgets/chart_bar.dart';
 import '/level_one/widgets/basket_item.dart';
 import '/level_one/widgets/egg_item.dart';
 
@@ -25,7 +26,7 @@ class _LevelOneState extends State<LevelOne> {
       isDropped: false,
     ),
   ];
-  int numOfDroppedElements = 0;
+  double numOfDroppedElements = 0;
 
   void updateProgress(index) {
     setState(() {
@@ -154,67 +155,115 @@ class _LevelOneState extends State<LevelOne> {
 
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.fromLTRB(20, mediaQuery.size.height * 0.05, 20,
-            mediaQuery.size.height * 0.05),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    icon: const Icon(
-                      Icons.arrow_circle_left_outlined,
-                      size: 40,
-                    )),
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: const Color(0xffFFE8E9),
-                  child: IconButton(
-                      onPressed: () {},
+            Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                       icon: const Icon(
-                        Icons.account_circle,
-                        color: Colors.black,
-                        size: 30,
+                        Icons.arrow_circle_left_outlined,
+                        size: 40,
                       )),
-                )
-              ],
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundColor: const Color(0xffFFE8E9),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.account_circle,
+                          color: Colors.black,
+                          size: 30,
+                        )),
+                  )
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    EggItem(
-                      dragElement: allDragElement[0],
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.2,
-                    ),
-                    BasketItem(
-                        dragElement: allDragElement[0],
-                        conditionNum: 1,
-                        updateProgress: () => updateProgress(0)),
-                  ],
+            Expanded(
+              flex: 1,
+              child: Card(
+                margin: const EdgeInsets.all(10),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                elevation: 5,
+                // color: const Color(0xff896ACD),
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      Color(0xfffe8a7d),
+                      Color(0xff896ACD),
+                    ],
+                  )),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Level 1',
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.start,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      ChartBar(progressOfLevel: numOfDroppedElements),
+                    ],
+                  ),
                 ),
-                Column(
-                  children: [
-                    EggItem(
-                      dragElement: allDragElement[1],
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.2,
-                    ),
-                    BasketItem(
+              ),
+            ),
+            Expanded(
+              flex: 4,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      EggItem(
+                        dragElement: allDragElement[0],
+                      ),
+                      SizedBox(
+                        height: mediaQuery.size.height * 0.2,
+                      ),
+                      BasketItem(
+                          dragElement: allDragElement[0],
+                          conditionNum: 1,
+                          updateProgress: () => updateProgress(0)),
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      EggItem(
                         dragElement: allDragElement[1],
-                        conditionNum: 2,
-                        updateProgress: () => updateProgress(1)),
-                  ],
-                )
-              ],
+                      ),
+                      SizedBox(
+                        height: mediaQuery.size.height * 0.2,
+                      ),
+                      BasketItem(
+                          dragElement: allDragElement[1],
+                          conditionNum: 2,
+                          updateProgress: () => updateProgress(1)),
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),
