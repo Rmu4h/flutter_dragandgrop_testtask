@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_draganddrop_testtask/level_one/widgets/chart_bar.dart';
+import '/level_one/widgets/chart_bar.dart';
 import '/level_one/widgets/basket_item.dart';
 import '/level_one/widgets/egg_item.dart';
 
@@ -155,36 +155,30 @@ class _LevelOneState extends State<LevelOne> {
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
-              flex: 1,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: const Icon(
-                        Icons.arrow_circle_left_outlined,
-                        size: 40,
-                      )),
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundColor: const Color(0xffFFE8E9),
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.account_circle,
-                          color: Colors.black,
-                          size: 30,
-                        )),
-                  )
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_circle_left_outlined,
+                      size: 40,
+                    )),
+                CircleAvatar(
+                  radius: 30,
+                  backgroundColor: const Color(0xffFFE8E9),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Image.asset('assets/images/fox.png'),
+                    iconSize: 40,
+                  ),
+                )
+              ],
             ),
             Expanded(
               flex: 1,
@@ -194,7 +188,6 @@ class _LevelOneState extends State<LevelOne> {
                     borderRadius: BorderRadius.circular(10)),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 elevation: 5,
-                // color: const Color(0xff896ACD),
                 child: Container(
                   padding: const EdgeInsets.all(20),
                   decoration: const BoxDecoration(

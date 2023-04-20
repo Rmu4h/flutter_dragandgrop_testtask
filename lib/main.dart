@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_draganddrop_testtask/start/start.dart';
+import '/start/start.dart';
 
 import 'level_one/level_one.dart';
 

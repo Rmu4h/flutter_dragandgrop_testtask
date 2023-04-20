@@ -12,7 +12,6 @@ class ChartBar extends StatelessWidget {
         Expanded(
           child: SizedBox(
             height: 20,
-            // width: MediaQuery.of(context).size.width * 0.7,
             child: Stack(
               children: [
                 Container(
@@ -24,7 +23,6 @@ class ChartBar extends StatelessWidget {
                 ),
                 AnimatedFractionallySizedBox(
                   widthFactor: progressOfLevel * 0.5,
-                  // heightFactor: ,
                   duration: const Duration(milliseconds: 500),
                   child: Container(
                     decoration: BoxDecoration(

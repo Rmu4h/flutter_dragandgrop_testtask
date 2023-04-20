@@ -42,10 +42,7 @@ class _EggItemState extends State<EggItem> {
         height: 120,
         width: 120,
       ),
-      onDragStarted: () {
-        //showSnackBarGlobal(context, 'Drag started');
-      },
-      //drag me. перенеси мене
+      //drag me
       child: widget.dragElement.isDropped
           ? const SizedBox(
               height: 140,

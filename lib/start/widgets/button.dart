@@ -20,17 +20,12 @@ class Button extends StatelessWidget {
             ]),
             borderRadius: BorderRadius.circular(10),
             boxShadow: const <BoxShadow>[
-              BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.57), //shadow for button
-                  blurRadius: 5) //blur radius of shadow
+              BoxShadow(color: Color.fromRGBO(0, 0, 0, 0.57), blurRadius: 5)
             ]),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
-            disabledForegroundColor: Colors.transparent.withOpacity(0.38),
-            disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
             shadowColor: Colors.transparent,
-            //make color or elevated button transparent
           ),
           onPressed: () {
             Navigator.of(context).pushNamed('/main');

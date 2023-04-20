@@ -26,7 +26,6 @@ class Start extends StatelessWidget {
             Image.asset(
               'assets/images/Humpty_Dumpty.webp',
               fit: BoxFit.cover,
-              // width: 250,
               height: mediaQuery.size.height / 2.5,
             ),
             const Text(
